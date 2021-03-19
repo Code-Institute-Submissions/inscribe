@@ -19,5 +19,7 @@
       "**/core.mongo*": true,
       "**/core.python*": true
    },
-   "emmet.extensionsPath": ".theia"
+"emmet.extensionsPath": ".theia",
+"python.pythonPath": "/home/gitpod/.pyenv/shims/python",
+"editor.autoSave": "on"
 }
