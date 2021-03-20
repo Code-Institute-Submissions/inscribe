@@ -181,3 +181,61 @@ p, footer {
     text-align: center;
     color: #000000;
 }
+
+/* Registration & Sign In*/
+
+input {
+    color: #FFF176;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-field {
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+textarea {
+    font-family: "Quicksand", sans-serif;
+    height: 30px;
+    padding: 0;
+    color: #FFF176;
+}
+
+.switch {
+    margin-bottom: 0.2rem;
+}
+
+.scribeTextA {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.scribeInputField {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.custCardPanReg {
+    margin: 0;
+    border-radius: 10px;
+}
+
+.custSubBtn {
+    background-color: #FFF176;
+    color: #BCAAA4;
+    border-radius: 5px;
+}
+
+.custSubBtn:hover {
+    background-color: #BCAAA4;
+    color: #FFF176;
+}
+
+.rsLink p {
+    color: #FAFAFA;
+}
+
+.rsLink a {
+    color: #FFF176;
+}

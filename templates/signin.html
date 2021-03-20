@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h4 class="center-align padOutHeight">Sign In to Your Account</h4>
+
+    <div class="row padOutHeight">
+        <form class="col s12 m8 offset-m2 custForm" method="POST" action="{{ url_for('signin') }}">
+            <div class="card-panel custCardPanReg transparent">
+<!-- Username Field -->
+                <div class="row">
+                    <div class="input-field col s8 push-s2 push-m2 push-l2 padOutHeight">
+                        <input id="username" name="username" type="text" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="username" class="yellow-text lighten-2">Your Username</label>
+                    </div>                    
+                </div>
+<!-- Password Field -->
+                <div class="row">
+                    <div class="input-field col s8 push-s2 push-m2 push-l2 padOutHeight">
+                        <input id="password" name="password" type="password" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="password" class="yellow-text lighten-2">Your Password</label>
+                    </div>
+                </div>
+<!-- Password Check Field -->
+                <div class="row">
+                    <div class="input-field col s8 push-s2 push-m2 push-l2">
+                        <input id="confirm-password" name="confirm-password" type="password" pattern="^[a-zA-Z0-9]{5,15}$" 
+                            minlength="5" maxlength="12" class="validate" required>
+                        <label for="confirm-password" class="yellow-text lighten-2">Confirm Your Password</label>
+                    </div>
+                </div>                
+<!--Form Submit Button-->
+                <div class="row">
+                    <button type="submit" class="col s8 btn offset-m2 offset-s2 custSubBtn waves-effect waves-orange">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+<!-- Account Registration Link -->
+    <div class="row">
+        <div class="col s12 rsLink">
+            <p class="center-align">
+                No Account Yet?
+                <a href="{{ url_for('registration') }}">Create an Account Now</a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
