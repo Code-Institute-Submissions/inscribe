@@ -292,3 +292,39 @@ textarea {
 .custSearch {
     margin: 1rem;
 }
+
+/* New Entry */
+
+.darkForm {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: #586F7C;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.card-panel form label {
+    color: #FAFAFA;
+}
+
+/* More Info */
+
+.scrMIHead {
+    color: #586F7C;
+}
+
+.scrMICard {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: #586F7C;
+    border-radius: 10px;
+}
+
+.scrMICard h5 {
+    color: #FFF176;
+}
+
+.scrMICard h6 {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    font-weight: lighter;
+    color: #FAFAFA;
+}

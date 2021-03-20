@@ -155,6 +155,13 @@ def add_entry():
     return render_template("new_entry.html", moods=moods)
 
 
+# More Information Route
+@app.route("/more_info/<entry_id>")
+def more_info(entry_id):
+    entry = mongo.db.entries.find_one({"_id": ObjectId(entry_id)})
+    return render_template("more_info.html", entry=entry)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

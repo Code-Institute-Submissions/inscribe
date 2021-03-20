@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3 class="center padOutHeight">Your Entry</h3>
+    <br>
+    <h5 class="center scrMIHead"><em>{{ entry.date }}</em></h5>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel scrMICard center">
+                <h5>What Happened?</h5>
+                <h6><em>{{- entry.event -}}</em></h6>
+
+                <h5 class="hide-on-small-only">How Strongly Did it Make You Feel? (Scale 1-10)</h5>
+                <h5 class="hide-on-med-and-up">Strength of Emotion (Scale 1-10)</h5>
+                <h6><em>{{- entry.severity -}}</em></h6>
+
+                <h5>How Could You Remedy This?</h5>
+                <h6><em>{{- entry.solution -}}</em></h6>
+                
+                <h5>Activity to Deal with Emotions</h5>
+                <h6><em>{{- entry.self_help -}}</em></h6>
+
+                <h5>Activity Duration</h5>
+                <h6><em>{{- entry.activity_dur -}}</em></h6>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+<!-- Desktop Buttons -->
+            <a href="{{ url_for('collate_entries') }}" 
+                class="btn waves-effect waves-orange custSubBtn padOutWidth hide-on-small-only">Back</a>
+            <a href="{{ url_for('delete_entry', entry_id=entry._id) }}" 
+                class="btn waves-effect waves-orange entryDltBtn padOutWidth hide-on-small-only right">Delete</a>
+            <a href="{{ url_for('edit_entry', entry_id=entry._id) }}" 
+                class="btn waves-effect waves-orange entryEdBtn padOutWidth hide-on-small-only right">Edit</a>
+<!-- Mobile Buttons -->
+            <a href="{{ url_for('collate_entries') }}" 
+                class="btn waves-effect waves-orange custSubBtn hide-on-med-and-up padOutWidth"><i class="material-icons">arrow_back</i></a>
+            <a href="{{ url_for('delete_entry', entry_id=entry._id) }}" 
+                class="btn waves-effect waves-orange entryDltBtn hide-on-med-and-up right"><i class="material-icons">delete</i></a>
+            <a href="{{ url_for('edit_entry', entry_id=entry._id) }}" 
+                class="btn waves-effect waves-orange entryEdBtn hide-on-med-and-up right"><i class="material-icons">create</i></a>              
+        </div>
+    </div>
+{% endblock %}
