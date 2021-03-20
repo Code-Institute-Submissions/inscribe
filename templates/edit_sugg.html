@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h4>Edit Suggestion</h4>
+    
+    <div class="row card-panel darkForm">
+        <form class="col s12" method="POST" action="{{ url_for('edit_sugg', suggestion_id=suggestion._id) }}">
+<!-- Suggestion Name -->
+            <div class="row">
+                <div class="input-field scribeInputField center col s12">
+                    <textarea id="suggestion_name" name="suggestion_name" minlength="4" maxlength="20" 
+                        class="materialize-textarea validate scribeTextA" required>{{- suggestion.suggestion_name -}}</textarea>
+                    <label for="suggestion_name" class="hide-on-small-only">Suggestion Name</label>
+                    <label for="suggestion_name" class="hide-on-med-and-up">Title</label>
+                </div>
+            </div>
+<!-- Suggestion Description -->
+            <div class="row">
+                <div class="input-field scribeInputField col s12 m10 l10">
+                    <textarea id="suggestion_desc" name="suggestion_desc" maxlength="100" 
+                        class="materialize-textarea validate scribeTextA" required>{{- suggestion.suggestion_desc -}}</textarea>
+                    <label for="suggestion_desc" class="hide-on-small-only">Describe Your Suggestion</label>
+                    <label for="suggestion_desc" class="hide-on-med-and-up">Description</label>
+                </div>
+            </div>
+<!-- Suggestion Reason -->
+            <div class="row">
+                <div class="input-field scribeInputField col s12 m10 l10">
+                    <textarea id="reason" name="reason" maxlength="100" 
+                        class="materialize-textarea validate scribeTextA" required>{{- suggestion.reason -}}</textarea>
+                    <label for="reason" class="hide-on-small-only">Why Does It Help?</label>
+                    <label for="reason" class="hide-on-med-and-up">Reason</label>
+                </div>
+            </div>
+<!-- Date Created -->
+            <div class="row">
+                <div class="input-field scribeInputField col s12 m10 l10">
+                    <input id="sugg_date" name="sugg_date" type="text" 
+                        value="{{ suggestion.sugg_date }}" class="datepicker validate" >
+                    <label for="sugg_date">Suggestion Date</label>
+                </div>
+            </div>
+<!--Submit Button-->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <!-- Desktop Buttons -->
+                    <a href="{{ url_for('community_home') }}"
+                        class="btn waves-effect waves-orange custSubBtn padOutWidth hide-on-small-only left">Back</a>
+                    <a href="{{ url_for('delete_sugg', suggestion_id=suggestion._id) }}"
+                        class="btn waves-effect waves-orange entryDltBtn padOutWidth hide-on-small-only right">Delete</a>
+                    <button type="submit" class="btn waves-effect waves-orange entryEdBtn padOutWidth hide-on-small-only right">
+                        Update
+                    </button>
+                    <!-- Mobile Buttons -->
+                    <a href="{{ url_for('community_home') }}"
+                        class="btn waves-effect waves-orange custSubBtn hide-on-med-and-up left"><i
+                            class="material-icons">arrow_back</i></a>
+                    <a href="{{ url_for('delete_sugg', suggestion_id=suggestion._id) }}"
+                        class="btn waves-effect waves-orange entryDltBtn hide-on-med-and-up right"><i
+                            class="material-icons">delete</i></a>
+                    <button type="submit" class="btn waves-effect waves-orange entryEdBtn hide-on-med-and-up right">
+                        <i class="material-icons">check</i>
+                    </button>
+                </div>
+            </div>
+        </form>
+  </div>
+
+
+{% endblock %}

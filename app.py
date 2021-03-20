@@ -224,6 +224,38 @@ def collate_entries():
     return redirect(url_for("profile"))
 
 
+# Community Route
+@app.route("/community_home", methods=["GET"])
+def community_home():
+    if not session.get("user"):
+        return redirect(url_for("error_handler.html"))
+
+    suggestions = list(mongo.db.suggestions.find())
+    return render_template("community.html", suggestions=suggestions)
+
+
+# Edit Suggestion Route
+@app.route("/edit_sugg/<suggestion_id>", methods=["GET", "POST"])
+def edit_sugg(suggestion_id):
+    if not session.get("user"):
+        return redirect(url_for("error_handler"))
+
+    if request.method == "POST":
+        updatedSugg = {
+            "suggestion_name": request.form.get("suggestion_name"),
+            "suggestion_desc": request.form.get("suggestion_desc"),
+            "sugg_date": request.form.get("sugg_date"),
+            "reason": request.form.get("reason"),
+            "created_by": session["user"],
+        }
+        mongo.db.suggestions.update_one(
+            {"_id": ObjectId(suggestion_id)}, updatedSugg)
+
+    suggestion = mongo.db.suggestions.find_one(
+        {"_id": ObjectId(suggestion_id)})
+    return render_template("edit_sugg.html", suggestion=suggestion)
+
+
 @app.errorhandler(403)
 def forbidden(e):
     return render_template("error_handler.html"), 403
