@@ -162,3 +162,22 @@ p, footer {
 .homeLink a {
     color: #FFF176;
 }
+
+/* About */
+
+.custCardPanel {
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 1.25rem;
+    background-color: rgb(250, 250, 250, 0.5);
+}
+
+.custInput{
+    border-radius: 10px;
+}
+
+.aboutBlurb p{
+    font-weight: bolder;
+    text-align: center;
+    color: #000000;
+}

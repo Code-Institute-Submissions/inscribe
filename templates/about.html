@@ -1,0 +1,39 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row center-align padOutHeight">
+        <h3>About Us</h3>
+    </div>
+
+    <div class="card-panel custCardPanel">
+        <div class="row aboutBlurb padOutHeight">
+            <div class="col s12">
+                <p>Have you found yourself questioning why you make certain decisions, and want an easy way to keep track of the consequences?</p>
+            </div>
+        </div>
+        <div class="row aboutBlurb padOutHeight">
+            <div class="col s12">
+                <p>Or perhaps you need to vent - offload some of the thoughts which just seem to be circling around your mind and how
+                    they've made you feel.
+                </p>
+            </div>
+        </div>
+        <div class="row aboutBlurb center-align padOutHeight">
+            <div class="col s12">
+                <p>Here at (in)Scribe, whatever your reason, we're here to offer you the option to securely record your experiences for your own 
+                    personal understanding to track your emotions accurately.</p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col s12">
+                <p class="center-align">
+                    No Account Yet?
+                    <a href="{{ url_for('registration') }}" class="light-blue-text text-darken-4">Create an Account Now</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
