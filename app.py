@@ -256,6 +256,26 @@ def edit_sugg(suggestion_id):
     return render_template("edit_sugg.html", suggestion=suggestion)
 
 
+# New Suggestion Route
+@app.route("/add_sugg", methods=["GET", "POST"])
+def add_sugg():
+    if not session.get("user"):
+        return redirect(url_for("error_handler.html"))
+
+    if request.method == "POST":
+        suggestion = {
+            "suggestion_name": request.form.get("suggestion_name"),
+            "suggestion_desc": request.form.get("suggestion_desc"),
+            "sugg_date": request.form.get("sugg_date"),
+            "reason": request.form.get("reason"),
+            "created_by": session["user"],
+        }
+        mongo.db.suggestions.insert_one(suggestion)
+        return redirect(url_for('community_home'))
+
+    return render_template("add_sugg.html")
+
+
 @app.errorhandler(403)
 def forbidden(e):
     return render_template("error_handler.html"), 403
