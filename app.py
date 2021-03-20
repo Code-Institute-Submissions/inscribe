@@ -276,6 +276,16 @@ def add_sugg():
     return render_template("add_sugg.html")
 
 
+# Delete Entry Route
+@app.route("/delete_sugg/<suggestion_id>")
+def delete_sugg(suggestion_id):
+    if not session.get("user"):
+        return redirect(url_for('error_handler'))
+
+    mongo.db.suggestions.remove({"_id": ObjectId(suggestion_id)})
+    return redirect(url_for("community_home"))
+
+
 @app.errorhandler(403)
 def forbidden(e):
     return render_template("error_handler.html"), 403
