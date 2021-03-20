@@ -115,6 +115,20 @@ def signout():
     return redirect(url_for("signin"))
 
 
+# Profile Route
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # Obtains User's Session Data from MongoDB.
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template(
+            "profile.html", username=username)
+
+    return redirect(url_for("signin"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
