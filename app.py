@@ -18,6 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Home Route
 @app.route("/")
 @app.route("/home")
 def home():
@@ -160,6 +161,33 @@ def add_entry():
 def more_info(entry_id):
     entry = mongo.db.entries.find_one({"_id": ObjectId(entry_id)})
     return render_template("more_info.html", entry=entry)
+
+
+# Edit Entry Route
+@app.route("/edit_entry/<entry_id>", methods=["GET", "POST"])
+def edit_entry(entry_id):
+    if not session.get("user"):
+        return redirect(url_for("error_handler"))
+
+    if request.method == "POST":
+        complete_sol = "on" if request.form.get(
+            "complete_sol") else "off"
+        updatedEntry = {
+            "mood_name": request.form.get("mood_name"),
+            "event": request.form.get("event"),
+            "severity": request.form.get("severity"),
+            "solution": request.form.get("solution"),
+            "self_help": request.form.get("self_help"),
+            "activity_dur": request.form.get("activity_dur"),
+            "complete_sol": complete_sol,
+            "created_by": session["user"],
+            "date": request.form.get("date")
+        }
+        mongo.db.entries.update({"_id": ObjectId(entry_id)}, updatedEntry)
+
+    entry = mongo.db.entries.find_one({"_id": ObjectId(entry_id)})
+    moods = mongo.db.moods.find().sort("mood_name", 1)
+    return render_template("edit_entry.html", entry=entry, moods=moods)
 
 
 if __name__ == "__main__":
