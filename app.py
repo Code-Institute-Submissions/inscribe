@@ -208,6 +208,37 @@ def search():
     return render_template("search.html", entries=entries)
 
 
+# All Entries Route
+@app.route("/collate_entries", methods=["GET"])
+def collate_entries():
+    # Obtains User's Session Data from MongoDB.
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    # Obtains User's Entry Data from MongoDB.
+    entries = list(mongo.db.entries.find())
+
+    if session["user"]:
+        return render_template(
+            "entries.html", username=username, entries=entries)
+
+    return redirect(url_for("profile"))
+
+
+@app.errorhandler(403)
+def forbidden(e):
+    return render_template("error_handler.html"), 403
+
+
+@app.errorhandler(404)
+def no_content(e):
+    return render_template("error_handler.html"), 404
+
+
+@app.errorhandler(500)
+def server_error(e):
+    return render_template("error_handler.html"), 500
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

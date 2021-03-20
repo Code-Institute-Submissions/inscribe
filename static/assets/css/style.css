@@ -328,3 +328,15 @@ textarea {
     font-weight: lighter;
     color: #FAFAFA;
 }
+
+/* Error Handling */
+
+.errorHomelink h5 a {
+    margin: 0;
+    padding: 0;
+    color: #000000;
+}
+
+.errorHomelink h5 a:hover {
+text-decoration: underline;    
+}

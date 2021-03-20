@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Header Elements -->
+    <div class="row">
+        <div class="col s12">
+            <h3 class="center">Community</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <h6 class="center padOutHeight hide-on-small-only">Do You Have Something to Share That Could Help Someone Else?</h6>
+            <h6 class="center padOutHeight hide-on-med-and-up">Something to Share Publically?</h6>
+        </div>
+    </div>
+
+<!-- Collapsible Community Posts -->
+    <div class="row">
+        <div class="col s12 m6 l6 padOutHeight">
+            <ul class="collapsible commCollapse">
+                {% for suggestion in suggestions %}
+                    <li class="commColLink">
+                        <div class="collapsible-header transparent">
+                            <i class="material-icons">bookmark_border</i>
+                            <p class="padOutWidth">{{ suggestion.suggestion_name }}</p>
+                            <p class="padOutWidth"><em>{{ suggestion.created_by }}</em></p>
+                            <br>
+                            <p>{{ suggestion.sugg_date }}</p>
+                        </div>
+                        <div class="collapsible-body transparent">
+                            <h6>Activity Description</h6>
+                            <p>{{ suggestion.suggestion_desc }}</p>
+                            <br>
+                            <h6>Reason It Helps</h6>
+                            <p>{{ suggestion.reason }}</p>
+                            <br>
+                            <div class="collapseButton">                          
+                        <!-- Desktop Buttons -->
+                                {% if session.user|lower == suggestion.created_by|lower %}
+                                <a href="{{ url_for('delete_sugg', suggestion_id=suggestion._id) }}"
+                                    class="btn btn-small waves-effect waves-orange entryDltBtn center hide-on-small-only right">Delete</a>
+                                <a href="{{ url_for('edit_sugg', suggestion_id=suggestion._id) }}"
+                                    class="btn btn-small waves-effect waves-orange entryEdBtn center hide-on-small-only right">Edit</a>
+                                {% endif %}
+                        <!-- Mobile Buttons -->
+                                {% if session.user|lower == suggestion.created_by|lower %}
+                                <a href="{{ url_for('delete_sugg', suggestion_id=suggestion._id) }}"
+                                    class="btn btn-small waves-effect waves-orange entryDltBtn center hide-on-med-and-up right"><i class="material-icons">delete</i></a>
+                                <a href="{{ url_for('edit_sugg', suggestion_id=suggestion._id) }}"
+                                    class="btn btn-small waves-effect waves-orange entryEdBtn center hide-on-med-and-up right"><i class="material-icons">create</i></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+<!-- Circular Add Button For Users-->
+    <div class="row padOutHeight">
+        <div class="col s12 center">
+            <a href="{{ url_for('add_sugg') }}" class="btn-floating btn-large waves-effect waves-light yellow lighten-2">
+                <i class="material-icons black-text">add</i>
+            </a>
+        </div>
+    </div>
+
+<!-- Pagination Links -->
+    <div class="row center">
+        <div class="col s12">
+            <ul class="pagination">
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                <li class="active"><a href="#!">1</a></li>
+                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+{% endblock %}

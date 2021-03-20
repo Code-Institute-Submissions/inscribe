@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h4 class="mainHeading center-align">Add Entry</h4>
+
+    <div class="row card-panel darkForm">
+        <form class="col s12 m8 l8 push-m2 push-l2" method="POST" action="{{ url_for('add_entry') }}">
+<!-- Mood Choice-->
+            <div class="row">
+                <div class="input-field scribeInputField col s12 m10 l12">
+                    <select id="mood_name" name="mood_name" class="validate" required>
+                        <option value="" selected>Choose Mood</option>
+                        {% for mood in moods %}
+                            <option value="{{ mood.mood_name }}">{{ mood.mood_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="mood_name">Your Mood</label>
+                </div>
+            </div>
+<!-- Event -->
+            <div class="row">
+                <div class="input-field scribeInputField col s12 m10 l10">
+                    <textarea id="event" name="event" minlength="5" maxlength="200" 
+                        class="materialize-textarea validate scribeTextA" required></textarea>
+                    <label for="event">What Happened?</label>
+                </div>
+            </div>
+<!-- Severity -->
+            <div class="row">
+                <div class="input-field scribeInputField col s12 m10 l10">
+                    <textarea id="severity" name="severity" maxlength="2" 
+                        class="materialize-textarea validate scribeTextA" required></textarea>
+                    <label for="severity" class="hide-on-small-only">How Strongly Did it Make You Feel? (Scale 1-10)</label>
+                    <label for="severity" class="hide-on-med-and-up">Strength of Emotion (Scale 1-10)</label>
+                </div>
+            </div>
+<!-- Solution -->
+            <div class="row">
+                <div class="input-field scribeInputField col s12 m10 l10">
+                    <textarea id="solution" name="solution" minlength="10"
+                        maxlength="50" class="materialize-textarea validate scribeTextA" required></textarea>
+                    <label for="solution">How Could You Remedy This?</label>
+                </div>
+            </div>
+<!-- Self-Help -->
+            <div class="row">
+                <div class="input-field scribeInputField col s12 m10 l10">
+                    <textarea id="self_help" name="self_help" minlength="2"
+                        maxlength="50" class="materialize-textarea validate scribeTextA" required></textarea>
+                    <label for="self_help">Activity to Deal with Emotions</label>
+                </div>
+            </div>
+<!-- Activity Duration -->
+            <div class="row">
+                <div class="input-field scribeInputField col s12 m10 l10">
+                    <textarea id="activity_dur" name="activity_dur" minlength="10"
+                        maxlength="50" class="materialize-textarea validate scribeTextA" required></textarea>
+                    <label for="activity_dur">Duration of Activity</label>
+                </div>
+            </div>
+<!-- Completed Solution-->
+            <div class="row">
+                <div class="input-field scribeInputField col s12 m10 l10">
+                    <div class="switch">
+                        <label for="complete_sol">
+                            <input type="checkbox" id="complete_sol" name="complete_sol">
+                            <span class="lever"></span>
+                            Have You Completed the Solution?
+                        </label>
+                    </div>
+                </div>
+            </div>
+<!--Due Date Picker-->
+            <div class="row">
+                <div class="input-field scribeInputField col s12 m10 l10">
+                      <input id="date" name="date" type="text" class="datepicker validate" >
+                    <label for="date">Entry Date</label>
+                </div>
+            </div>
+<!--Submit Button-->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn btn-small custSubBtn">
+                        Add Entry <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+  </div>
+
+{% endblock %}
