@@ -106,6 +106,15 @@ def signin():
     return render_template("signin.html")
 
 
+# Sign Out Route
+@app.route("/signout")
+def signout():
+    # Removes User from Session Cookie
+    flash("Goodbye! See You Again Soon.")
+    session.pop("user")
+    return redirect(url_for("signin"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
