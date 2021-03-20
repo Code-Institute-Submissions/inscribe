@@ -190,6 +190,24 @@ def edit_entry(entry_id):
     return render_template("edit_entry.html", entry=entry, moods=moods)
 
 
+# Delete Entry Route
+@app.route("/delete_entry/<entry_id>")
+def delete_entry(entry_id):
+    if not session.get("user"):
+        return redirect(url_for('error_handler'))
+
+    mongo.db.entries.remove({"_id": ObjectId(entry_id)})
+    return redirect(url_for("collate_entries"))
+
+
+# Search Functionality Route
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    entries = list(mongo.db.entries.find({"$text": {"$search": query}}))
+    return render_template("search.html", entries=entries)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
