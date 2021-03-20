@@ -239,3 +239,56 @@ textarea {
 .rsLink a {
     color: #FFF176;
 }
+
+/* Entries */
+
+.custEntCard {
+    background-color: rgb(250, 250, 250, 0.7);
+    border-radius: 10px;
+    min-height: 220px;
+}
+
+.custEntCard p {
+    margin: 1rem;
+    padding-top: 4rem;
+    color: #263238;
+    font-weight: bolder;
+}
+
+.entryMBtn {
+    margin-bottom: 1rem;
+    background-color: #FFF176;
+    color: #BCAAA4;
+}
+
+.entryMBtn:hover {
+    background-color: #BCAAA4;
+    color: #FFF176;
+}
+
+.entryEdBtn {
+    margin-bottom: 1rem;
+    background-color: #419D78;
+    color: #FAFAFA;
+}
+
+.entryEdBtn:hover {
+    background-color: #FAFAFA;
+    color: #419D78;
+}
+
+.entryDltBtn {
+    margin: 0 1.75rem 1rem 1rem;
+    background-color: #EF6F6C;
+    color: #FAFAFA;
+}
+
+.entryDltBtn:hover {
+    margin-bottom: 1rem;
+    background-color: #FAFAFA;
+    color: #EF6F6C;
+}
+
+.custSearch {
+    margin: 1rem;
+}

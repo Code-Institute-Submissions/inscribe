@@ -129,6 +129,32 @@ def profile(username):
     return redirect(url_for("signin"))
 
 
+# New Entry Route
+@app.route("/add_entry", methods=["GET", "POST"])
+def add_entry():
+    if not session.get("user"):
+        return redirect(url_for("error_handler.html"))
+
+    if request.method == "POST":
+        complete_sol = "on" if request.form.get("complete_sol") else "off"
+        entry = {
+            "mood_name": request.form.get("mood_name"),
+            "event": request.form.get("event"),
+            "severity": request.form.get("severity"),
+            "solution": request.form.get("solution"),
+            "self_help": request.form.get("self_help"),
+            "activity_dur": request.form.get("activity_dur"),
+            "complete_sol": complete_sol,
+            "created_by": session["user"],
+            "date": request.form.get("date")
+        }
+        mongo.db.entries.insert_one(entry)
+        return redirect(url_for('collate_entries'))
+
+    moods = mongo.db.moods.find().sort("mood_name", 1)
+    return render_template("new_entry.html", moods=moods)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
