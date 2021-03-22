@@ -36,18 +36,18 @@
                             <br>
                             <div class="collapseButton">                          
                         <!-- Desktop Buttons -->
-                                {% if session.user|lower == suggestion.created_by|lower %}
+                                {% if session.user == "admin" or session.user|lower == suggestion.created_by|lower %}
                                 <a href="{{ url_for('delete_sugg', suggestion_id=suggestion._id) }}"
                                     class="btn btn-small waves-effect waves-orange entryDltBtn center hide-on-small-only right">Delete</a>
                                 <a href="{{ url_for('edit_sugg', suggestion_id=suggestion._id) }}"
                                     class="btn btn-small waves-effect waves-orange entryEdBtn center hide-on-small-only right">Edit</a>
                                 {% endif %}
                         <!-- Mobile Buttons -->
-                                {% if session.user|lower == suggestion.created_by|lower %}
-                                <a href="{{ url_for('delete_sugg', suggestion_id=suggestion._id) }}"
-                                    class="btn btn-small waves-effect waves-orange entryDltBtn center hide-on-med-and-up right"><i class="material-icons">delete</i></a>
-                                <a href="{{ url_for('edit_sugg', suggestion_id=suggestion._id) }}"
-                                    class="btn btn-small waves-effect waves-orange entryEdBtn center hide-on-med-and-up right"><i class="material-icons">create</i></a>
+                                {% if session.user == "admin" or session.user|lower == suggestion.created_by|lower %}
+                                    <a href="{{ url_for('delete_sugg', suggestion_id=suggestion._id) }}"
+                                        class="btn btn-small waves-effect waves-orange entryDltBtn center hide-on-med-and-up right"><i class="material-icons">delete</i></a>
+                                    <a href="{{ url_for('edit_sugg', suggestion_id=suggestion._id) }}"
+                                        class="btn btn-small waves-effect waves-orange entryEdBtn center hide-on-med-and-up right"><i class="material-icons">create</i></a>
                                 {% endif %}
                             </div>
                         </div>
