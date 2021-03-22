@@ -329,6 +329,30 @@ textarea {
     color: #FAFAFA;
 }
 
+/* Community */
+
+.commCollapse {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: #FFF176;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0.5rem;
+    border: none;
+}
+
+.commColLink p {
+    color: #FFF176;
+    font-weight: bolder;
+}
+
+.collapseButton {
+    padding-bottom: 1rem;
+}
+
+.collapsible-header, .collapsible-body {
+    border-bottom: 1px #FAFAFA solid;
+}
+
 /* Error Handling */
 
 .errorHomelink h5 a {
