@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s12">
+        <div class="col s12 commHeader">
             <h6 class="center padOutHeight hide-on-small-only">Do You Have Something to Share That Could Help Someone Else?</h6>
             <h6 class="center padOutHeight hide-on-med-and-up">Something to Share Publically?</h6>
         </div>
@@ -23,9 +23,7 @@
                         <div class="collapsible-header transparent">
                             <i class="material-icons">bookmark_border</i>
                             <p class="padOutWidth">{{ suggestion.suggestion_name }}</p>
-                            <p class="padOutWidth"><em>{{ suggestion.created_by }}</em></p>
-                            <br>
-                            <p>{{ suggestion.sugg_date }}</p>
+                            <p class="padOutWidth"><em>{{ suggestion.created_by }}, <br> {{ suggestion.sugg_date }}</em></p>
                         </div>
                         <div class="collapsible-body transparent">
                             <h6>Activity Description</h6>
