@@ -286,6 +286,12 @@ def delete_sugg(suggestion_id):
     return redirect(url_for("community_home"))
 
 
+# Error Handling / Routes
+@app.route("/error_handler")
+def error_handler():
+    return render_template("error_handler.html")
+
+
 @app.errorhandler(403)
 def forbidden(e):
     return render_template("error_handler.html"), 403
