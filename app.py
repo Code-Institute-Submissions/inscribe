@@ -196,7 +196,7 @@ def delete_entry(entry_id):
     if not session.get("user"):
         return redirect(url_for('error_handler'))
 
-    mongo.db.entries.remove({"_id": ObjectId(entry_id)})
+    mongo.db.entries.delete_one({"_id": ObjectId(entry_id)})
     return redirect(url_for("collate_entries"))
 
 
@@ -282,7 +282,7 @@ def delete_sugg(suggestion_id):
     if not session.get("user"):
         return redirect(url_for('error_handler'))
 
-    mongo.db.suggestions.remove({"_id": ObjectId(suggestion_id)})
+    mongo.db.suggestions.delete_one({"_id": ObjectId(suggestion_id)})
     return redirect(url_for("community_home"))
 
 
