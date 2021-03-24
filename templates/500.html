@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    <h3 class="center">Uh Oh, Something's Gone Wrong.</h3>
+    <br>
+    <h5 class="center">- Server Error (500) -</h5>
+    <br>
+    <div class="errorHomelink">
+        <h5 class="center padOutHeight"><a href="{{ url_for('home') }}">Return to the Homepage?</a></h5>
+    </div>
+{% endblock %}

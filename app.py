@@ -1,7 +1,7 @@
 import os
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for)
+    redirect, request, session, url_for, abort)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -287,24 +287,19 @@ def delete_sugg(suggestion_id):
 
 
 # Error Handling / Routes
-@app.route("/error_handler")
-def error_handler():
-    return render_template("error_handler.html")
-
-
 @app.errorhandler(403)
 def forbidden(e):
-    return render_template("error_handler.html"), 403
+    return render_template("403.html"), 403
 
 
 @app.errorhandler(404)
 def no_content(e):
-    return render_template("error_handler.html"), 404
+    return render_template("404.html"), 404
 
 
 @app.errorhandler(500)
 def server_error(e):
-    return render_template("error_handler.html"), 500
+    return render_template("500.html"), 500
 
 
 if __name__ == "__main__":
