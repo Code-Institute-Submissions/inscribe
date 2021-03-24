@@ -221,6 +221,7 @@ textarea {
 
 .custCardPanReg {
     margin: 0;
+    padding: 0;
     border-radius: 10px;
 }
 
@@ -236,7 +237,8 @@ textarea {
 }
 
 .rsLink p {
-    color: #FAFAFA;
+    color: #000000;
+    
 }
 
 .rsLink a {
