@@ -368,12 +368,17 @@ textarea {
 
 /* Error Handling */
 
-.errorHomelink h5 a {
+.errorCode {
+    color: #A30015;
+}
+
+
+.errorHomelink h6 a {
     margin: 0;
     padding: 0;
     color: #000000;
 }
 
-.errorHomelink h5 a:hover {
-text-decoration: underline;    
+.errorHomelink h6 a:hover {
+    text-decoration: underline;    
 }

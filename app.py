@@ -41,66 +41,68 @@ def about():
 # Registration Route
 @app.route("/registration", methods=["GET", "POST"])
 def registration():
-    if request.method == 'POST':
-        # Confirms for an Existing Username.
-        existing_user = mongo.db.users.find_one(
+    if request.method == "POST":
+        # Confirms for Existing Username
+        registered_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
-        if existing_user:
+        if registered_user:
             flash("Sorry, That Username's Been Taken.")
             return redirect(url_for("registration"))
 
         password = request.form.get("password")
         pw_check = request.form.get("confirm-password")
-        username = request.form.get("user")
 
+        # Cross-checks Password with Inputted Confirm Password.
         if password != pw_check:
-            flash("That Password's Not Right, Try Again.")
+            flash("Something's Not Right, Try Again.")
+            return redirect(url_for("registration"))
 
-        if password == username:
-            flash("Is That the Right Password for This Account?")
-
+        # Confirm if Password and Confirm Password are the Same.
         if password == pw_check:
 
-            registration = {
+            new_user = {
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(
-                    request.form.get("password"))
-            }
+                    request.form.get("password").lower()),
+                    }
 
-        mongo.db.users.insert_one(registration)
+        mongo.db.users.insert_one(new_user)
 
-        # Enters the New User into a Session.
         session["user"] = request.form.get("username").lower()
-        flash("Hey There {}. Ready to Write?".format(
-            request.form.get("username").capitalize()))
-        return redirect(url_for(
-            "profile", username=session["user"]))
+        flash("Welcome to (in)Scribe. Ready to Write?")
+        return redirect(url_for("profile", username=session["user"]))
+
     return render_template("registration.html")
 
 
-# Sign In Route
+# Sign-In Route
 @app.route("/signin", methods=["GET", "POST"])
 def signin():
     if request.method == "POST":
-        # Confirms for an Existing Username.
+        # Confirms for Existing Username
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # Confirms Password Matches User's.
+            # Confirms Hashed Password Aligns with Users Input.
             if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
+                existing_user["password"],
+                    request.form.get("password")) and check_password_hash(
+                existing_user["password"],
+                    request.form.get("confirm-password")):
                 session["user"] = request.form.get("username").lower()
+                flash("Hey There {}. Ready to Write?".format(
+                    request.form.get("username").capitalize()))
                 return redirect(url_for(
                     "profile", username=session["user"]))
             else:
-                # Confirms Incorrect Password Inputted
+                # Incorrect Password Inputted
                 flash("Sorry, Something's Not Right")
                 return redirect(url_for("signin"))
 
         else:
-            # Non-Existent Username
+            # Username Doesn't Yet Exist.
             flash("Sorry, Something's Not Right")
             return redirect(url_for("signin"))
 
@@ -117,7 +119,7 @@ def signout():
 
 
 # Profile Route
-@app.route("/profile/<username>", methods=["GET", "POST"])
+@app.route("/profile/<username>", methods=["GET"])
 def profile(username):
     # Obtains User's Session Data from MongoDB.
     username = mongo.db.users.find_one(
@@ -134,7 +136,7 @@ def profile(username):
 @app.route("/add_entry", methods=["GET", "POST"])
 def add_entry():
     if not session.get("user"):
-        return redirect(url_for("error_handler.html"))
+        abort(404)
 
     if request.method == "POST":
         complete_sol = "on" if request.form.get("complete_sol") else "off"
@@ -157,8 +159,11 @@ def add_entry():
 
 
 # More Information Route
-@app.route("/more_info/<entry_id>")
+@app.route("/more_info/<entry_id>", methods=["GET"])
 def more_info(entry_id):
+    if not session.get("user"):
+        abort(403)
+
     entry = mongo.db.entries.find_one({"_id": ObjectId(entry_id)})
     return render_template("more_info.html", entry=entry)
 
@@ -167,7 +172,7 @@ def more_info(entry_id):
 @app.route("/edit_entry/<entry_id>", methods=["GET", "POST"])
 def edit_entry(entry_id):
     if not session.get("user"):
-        return redirect(url_for("error_handler"))
+        abort(403)
 
     if request.method == "POST":
         complete_sol = "on" if request.form.get(
@@ -203,6 +208,9 @@ def delete_entry(entry_id):
 # Search Functionality Route
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    if not session.get("user"):
+        abort(403)
+
     query = request.form.get("query")
     entries = list(mongo.db.entries.find({"$text": {"$search": query}}))
     return render_template("search.html", entries=entries)
@@ -238,7 +246,7 @@ def community_home():
 @app.route("/edit_sugg/<suggestion_id>", methods=["GET", "POST"])
 def edit_sugg(suggestion_id):
     if not session.get("user"):
-        return redirect(url_for("error_handler"))
+        abort(403)
 
     if request.method == "POST":
         updatedSugg = {
@@ -260,7 +268,7 @@ def edit_sugg(suggestion_id):
 @app.route("/add_sugg", methods=["GET", "POST"])
 def add_sugg():
     if not session.get("user"):
-        return redirect(url_for("error_handler.html"))
+        abort(403)
 
     if request.method == "POST":
         suggestion = {
@@ -287,6 +295,7 @@ def delete_sugg(suggestion_id):
 
 
 # Error Handling / Routes
+
 @app.errorhandler(403)
 def forbidden(e):
     return render_template("403.html"), 403
@@ -303,6 +312,6 @@ def server_error(e):
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
+    app.run(host=os.environ.get("IP", "0.0.0.0"),
+            port=int(os.environ.get("PORT", "5000")),
             debug=True)
