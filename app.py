@@ -219,17 +219,20 @@ def search():
 # All Entries Route
 @app.route("/collate_entries", methods=["GET"])
 def collate_entries():
-    # Obtains User's Session Data from MongoDB.
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    # Obtains User's Entry Data from MongoDB.
-    entries = list(mongo.db.entries.find())
-
-    if session["user"]:
+    try:
+        if not session.get("user"):
+            return redirect(url_for("signin"))
+        else:
+            # Obtains User's Session Data from MongoDB.
+            username = mongo.db.users.find_one(
+                {"username": session["user"]})["username"]
+            # Obtains User's Entry Data from MongoDB.
+            entries = list(mongo.db.entries.find())
+            return render_template(
+                "entries.html", username=username, entries=entries)
+    except KeyError:
         return render_template(
             "entries.html", username=username, entries=entries)
-
-    return redirect(url_for("profile"))
 
 
 # Community Route
