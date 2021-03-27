@@ -118,18 +118,18 @@ def signout():
     return redirect(url_for("signin"))
 
 
-# Profile Route
-@app.route("/profile/<username>", methods=["GET"])
+@app.route("/profile/<username>")
 def profile(username):
-    # Obtains User's Session Data from MongoDB.
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template(
-            "profile.html", username=username)
-
-    return redirect(url_for("signin"))
+    try:
+        if not session.get("user"):
+            return redirect(url_for("signin"))
+        else:
+            username = mongo.db.users.find_one(
+                {"username": session["user"]})["username"]
+            return render_template("profile.html", username=username)
+# Prevents KeyError from Stopping the Return of User's Profile When Signed In.
+    except KeyError:
+        return render_template("profile.html", username=username)
 
 
 # New Entry Route
