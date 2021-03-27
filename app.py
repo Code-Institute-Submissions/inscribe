@@ -238,11 +238,18 @@ def collate_entries():
 # Community Route
 @app.route("/community_home", methods=["GET"])
 def community_home():
-    if not session.get("user"):
-        return redirect(url_for("error_handler.html"))
-
-    suggestions = list(mongo.db.suggestions.find())
-    return render_template("community.html", suggestions=suggestions)
+    try:
+        if not session.get("user"):
+            return redirect(url_for("signin"))
+        else:
+            username = mongo.db.users.find_one(
+                {"username": session["user"]})["username"]
+            suggestions = list(mongo.db.suggestions.find())
+        return render_template(
+            "community.html", username=username, suggestions=suggestions)
+    except KeyError:
+        return render_template(
+            "community.html", username=username, suggestions=suggestions)
 
 
 # Edit Suggestion Route
