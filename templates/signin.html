@@ -34,17 +34,19 @@
                         Sign In
                     </button>
                 </div>
+                <br>
+<!-- Account Registration Link -->
+                <div class="row">
+                    <div class="col s12 rsLink">
+                        <p class="center-align">
+                            No Account Yet?
+                            <br class="hide-on-med-and-up">
+                            <a href="{{ url_for('registration') }}">Create an Account Now</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </form>
-    </div>
-<!-- Account Registration Link -->
-    <div class="row">
-        <div class="col s12 rsLink">
-            <p class="center-align">
-                No Account Yet?
-                <a href="{{ url_for('registration') }}">Create an Account Now</a>
-            </p>
-        </div>
     </div>
 
 {% endblock %}
