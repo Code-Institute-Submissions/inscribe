@@ -24,18 +24,18 @@
                         <div class="col s12 padOutHeight center">
                             <!-- Desktop Buttons -->
                             <a href="{{ url_for('more_info', entry_id=entry._id) }}" 
-                                class="btn waves-effect waves-orange entryMBtn padOutWidth hide-on-small-only">More</a>
+                                class="btn waves-effect waves-orange entryMBtn padOutWidth hide-on-med-and-down">More</a>
                             <a href="{{ url_for('delete_entry', entry_id=entry._id) }}" 
-                                class="btn waves-effect waves-orange entryDltBtn padOutWidth hide-on-small-only right">Delete</a>
+                                class="btn waves-effect waves-orange entryDltBtn padOutWidth hide-on-med-and-down right">Delete</a>
                             <a href="{{ url_for('edit_entry', entry_id=entry._id) }}" 
-                                class="btn waves-effect waves-orange entryEdBtn padOutWidth hide-on-small-only right">Edit</a>
+                                class="btn waves-effect waves-orange entryEdBtn padOutWidth hide-on-med-and-down right">Edit</a>
                             <!-- Mobile Buttons -->
                             <a href="{{ url_for('delete_entry', entry_id=entry._id) }}" 
-                                class="btn waves-effect waves-orange entryDltBtn hide-on-med-and-up right"><i class="material-icons">delete</i></a>
+                                class="btn waves-effect waves-orange entryDltBtn hide-on-large-only right"><i class="material-icons">delete</i></a>
                             <a href="{{ url_for('edit_entry', entry_id=entry._id) }}" 
-                                class="btn waves-effect waves-orange entryEdBtn hide-on-med-and-up right"><i class="material-icons">create</i></a> 
+                                class="btn waves-effect waves-orange entryEdBtn hide-on-large-only right"><i class="material-icons">create</i></a> 
                             <a href="{{ url_for('more_info', entry_id=entry._id) }}" 
-                                class="btn waves-effect waves-orange entryMBtn hide-on-med-and-up left"><i class="material-icons">launch</i></a>                            
+                                class="btn waves-effect waves-orange entryMBtn hide-on-large-only left"><i class="material-icons">launch</i></a>                            
                         </div>
                     </div>
                 </div>

@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
 <!-- Personal CSS -->
     <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='assets/img/quill1.png') }}" rel="icon" type="icon/png">
+    <link href="{{ url_for('static', filename='assets/img/quill_bl.png') }}" rel="icon" type="icon/png">
 <!-- Scroll Reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     {% block styles %}
@@ -34,7 +34,7 @@
     <nav class="nav-extended nav-center transparent custNav">
         <div class="nav-wrapper">
             <a href="{{ url_for('home') }}" class="brand-logo center">
-                <img class="custLogo" src="{{ url_for('static', filename='assets/img/quill1.png') }}" alt="Site Logo">
+                <img class="custLogo" src="{{ url_for('static', filename='assets/img/quill_wh.png') }}" alt="Site Logo">
                 <span class="hide-on-small-only">(in)Scribe</span>
             </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
@@ -73,17 +73,17 @@
     </ul>
 
 <!--Flash Message-->
-    <section>
+    <div>
         {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
-        <div class="row">
-            <p class="center fMessage">{{ message }}</p>
-        </div>
-        {% endfor %}
-        {% endif %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row">
+                        <p class="center fMessage">{{ message }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
         {% endwith %}
-    </section>
+    </div>
 
 <!-- Main Page Content -->
     <main class="container">
@@ -115,3 +115,5 @@
 </body>
 
 </html>
+
+

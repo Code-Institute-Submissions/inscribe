@@ -159,11 +159,11 @@ p, footer {
     border-radius: 5px;
     padding: 0.5rem;
     background-color: rgb(0, 0, 0, 0.5);
-    color: #FFF176;
+    color: #FAFAFA;
 }
 
 .homeLink a {
-    color: #FAFAFA;
+    color: #FFF176;
 }
 
 /* About */

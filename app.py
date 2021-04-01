@@ -76,7 +76,7 @@ def registration():
     return render_template("registration.html")
 
 
-# Sign-In Route
+# Sign In Route
 @app.route("/signin", methods=["GET", "POST"])
 def signin():
     if request.method == "POST":
@@ -85,26 +85,21 @@ def signin():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # Confirms Hashed Password Aligns with Users Input.
+            # Checks Hashed Password Matches User Input
             if check_password_hash(
-                existing_user["password"],
-                    request.form.get("password")) and check_password_hash(
-                existing_user["password"],
-                    request.form.get("confirm-password")):
+                    existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Hey There {}. Ready to Write?".format(
-                    request.form.get("username").capitalize()))
                 return redirect(url_for(
                     "profile", username=session["user"]))
             else:
-                # Incorrect Password Inputted
+                # Invalid Password Match
                 flash("Sorry, Something's Not Right")
-                return redirect(url_for("signin"))
+                return render_template("signin.html")
 
         else:
-            # Username Doesn't Yet Exist.
+            # Nonexistent Username
             flash("Sorry, Something's Not Right")
-            return redirect(url_for("signin"))
+            return render_template("signin.html")
 
     return render_template("signin.html")
 
@@ -143,7 +138,7 @@ def add_entry():
         entry = {
             "mood_name": request.form.get("mood_name"),
             "event": request.form.get("event"),
-            "severity": request.form.get("severity"),
+            "strength_num": request.form.get("strength_num"),
             "solution": request.form.get("solution"),
             "self_help": request.form.get("self_help"),
             "activity_dur": request.form.get("activity_dur"),
@@ -155,7 +150,9 @@ def add_entry():
         return redirect(url_for('collate_entries'))
 
     moods = mongo.db.moods.find().sort("mood_name", 1)
-    return render_template("new_entry.html", moods=moods)
+    strengths = mongo.db.strengths.find()
+    return render_template(
+        "new_entry.html", moods=moods, strengths=strengths)
 
 
 # More Information Route
@@ -180,7 +177,7 @@ def edit_entry(entry_id):
         updatedEntry = {
             "mood_name": request.form.get("mood_name"),
             "event": request.form.get("event"),
-            "severity": request.form.get("severity"),
+            "strength_num": request.form.get("strength_num"),
             "solution": request.form.get("solution"),
             "self_help": request.form.get("self_help"),
             "activity_dur": request.form.get("activity_dur"),
@@ -192,7 +189,9 @@ def edit_entry(entry_id):
 
     entry = mongo.db.entries.find_one({"_id": ObjectId(entry_id)})
     moods = mongo.db.moods.find().sort("mood_name", 1)
-    return render_template("edit_entry.html", entry=entry, moods=moods)
+    strengths = mongo.db.strengths.find()
+    return render_template(
+        "edit_entry.html", entry=entry, moods=moods, strengths=strengths)
 
 
 # Delete Entry Route

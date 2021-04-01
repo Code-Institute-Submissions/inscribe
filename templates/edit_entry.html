@@ -29,13 +29,20 @@
                     <label for="event">What Happened?</label>
                 </div>
             </div>
-<!-- Severity -->
+<!-- Emotion Strength-->
             <div class="row">
-                <div class="input-field scribeInputField col s12 m10 l10">
-                    <textarea id="severity" name="severity" maxlength="2" 
-                        class="materialize-textarea validate scribeTextA" required>{{- entry.severity -}}</textarea>
-                    <label for="severity" class="hide-on-small-only">How Strongly Did it Make You Feel? (Scale 1-10)</label>
-                    <label for="severity" class="hide-on-med-and-up">Strength of Emotion (Scale 1-10)</label>
+                <div class="input-field scribeInputField col s12 m10 l12">
+                    <select id="strength_num" name="strength_num" class="validate" required>
+                        <option value="" selected>Strength of Emotion</option>
+                        {% for strength in strengths %}
+                            {% if strength.strength_num == entry.strength_num %}
+                            <option value="{{ strength.strength_num }}" selected>{{ strength.strength_num }}</option>
+                            {% else %}
+                            <option value="{{ strength.strength_num }}">{{ strength.strength_num }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <label for="strength_num">Strength of Emotion (Scale 1-10)</label>
                 </div>
             </div>
 <!-- Solution -->
