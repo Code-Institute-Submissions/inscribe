@@ -25,13 +25,13 @@
                     <label for="event">What Happened?</label>
                 </div>
             </div>
-<!-- Severity -->
+<!-- Strength -->
             <div class="row">
                 <div class="input-field scribeInputField col s12 m10 l10">
                     <select id="strength_num" name="strength_num" class="validate" required>
                         <option value="" selected>Strength of Emotion (Scale 1-10)</option>
                         {% for strength in strengths %}
-                            <option value="{{ strength.strength_num }}">{{ severity.strength_num }}</option>
+                            <option value="{{ strength.strength_num }}">{{ strength.strength_num }}</option>
                         {% endfor %}
                     </select>
                     <label for="strength_num" class="hide-on-small-only">How Strongly Did it Make You Feel? (Scale 1-10)</label>

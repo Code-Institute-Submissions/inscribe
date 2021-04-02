@@ -5,8 +5,8 @@
 
 <br>
 
-(in)Scribe is an online platform which enables users to track and log their own personal accounts of daily life, in essence, a journal which allows the tracking of feelings
-and emotions which they may experience on a regular basis, and would like to understand how they're triggered. All of their entries are securely stored, and can be searched, edited 
+(in)Scribe is an online platform that enables users to track and log their accounts of daily life, in essence, a journal that allows the tracking of feelings
+and emotions which they may experience regularly, and would like to understand how they're triggered. All of their entries are securely stored and can be searched, edited 
 and deleted with ease.
 
 This project, as part of my Third Milestone inline with Code Institute, Dublin, has been deployed to [Github Pages](https://) and [Heroku](https://inscribe-wm.herokuapp.com/).
@@ -49,16 +49,16 @@ This project, as part of my Third Milestone inline with Code Institute, Dublin, 
 ### Concept
 
 We, as a society, spend an inordinate amount of time interacting with a screen in some form, whether it be for personal
-or business use. This could in fact be an entry of itself to input into (in)Scribe. With my inquisitive nature on wanting 
+or business use. This could be an entry of itself to input into (in)Scribe. With my inquisitive nature on wanting 
 to understand the behaviours of myself and those around me, journaling became a fundamental element to daily life, 
-including that of various mindfulness techniques which became habit. Similar to various other mindfulness, or journaling 
-platforms available, (in)Scribe was desgined with a simple easily-navigable interface at the heart, and available to 
+including that of various mindfulness techniques which became a habit. Similar to various other mindfulness, or journaling 
+platforms available, (in)Scribe was designed with a simple easily-navigable interface at the heart, and available to 
 <em>anyone</em> with internet access, and therefore has been made responsive across Desktop and Mobile devices.
 
 ### User Stories
 - As a registered user, I want to be able to record a memorable event, and what lead up to this point to make it memorable.
 - As a registered user, I want to be able to search for a previously entered event, to understand and compare any similar triggers.
-- As a registered user, I want to be able to update and delete a record if I deem necessary.
+- As a registered user, I want to be able to update and delete a record if I deem it necessary.
 - As a registered user, I want the option to be able to post to a community page, where other registered users share their 
   own advice on dealing with negative or positive emotions.
 
@@ -70,17 +70,17 @@ platforms available, (in)Scribe was desgined with a simple easily-navigable inte
 
 A custom CSS file placed within the static, assets folder of (in)Scribe, was used in conjunction with Materialize.css. 
 Materialize.css was chosen (despite its frequency of updates) for <em>its</em> simplicity in approach to essential components 
-I included within the project.
+which I included within the project.
 
 #### Colour Scheme
 
 As with all online platforms, a consistent colour scheme is fundamental. With this in mind, and taking into consideration the
-vibrancy and animation of the video background played on loop, it was important that the text content colour be contrasting but in-keeping 
-with the background media, and where the contrast wasn't imposing enough, a transluscent/opaque white or black background was 
+vibrancy and animation of the video background played on loop, the text content colour needed to be contrasting but in-keeping 
+with the background media, and where the contrast wasn't imposing enough, a translucent/opaque white or black background was 
 used behind.
 
 * Navbar elements used #FAFAFA (white) colour, as opposed to a complete #FFFFFF (white) as it has been proven to be a less harsh contrast.
-* Tag line text on the home page, used #586F7C (Dark Electric Blue), against an opaque white background, as an entirely #000000 (black) text
+* Tag line text on the home page, using #586F7C (Dark Electric Blue), against an opaque white background, as an entirely #000000 (black) text
   blended into the darks of the video background, and the animation of the white background and dark text entering the screen, catches the users attention
   to observe the tagline text.
 * All anchor elements/links used throughout the project (but not used within the navbar), had the same #FFF176 Corn (yellow) colour.
@@ -102,10 +102,10 @@ Google Fonts Library.
 #### Imagery
 
 With a very simple project concept, imagery has been kept to an <em>absolute</em> minimum for that reason alone. The 'Scribe' element
-of (in)Scribe, was decorated with a quill to simulate a the user's motion of writing something personal or of value to them. This image 
+of (in)Scribe, was decorated with a quill to simulate the user's motion of writing something personal or of value to them. This image 
 can be found on [Flaticon](https://tinyurl.com/wvrdcy2p).
 
-Although user's may have their own version of a peaceful environment, the idea of a serene sunset with a warm coloured background, I 
+Although users may have their version of a peaceful environment, the idea of a serene sunset with a warm coloured background, I 
 felt instilled a sense of calm, and was used as an animated background, played on loop, throughout the site.
 
 
@@ -142,19 +142,19 @@ private.
 
 ##### Entry Creation
 
-* (in)Scribe account-holders have the ability to create a new entry, when they have been redirected to the 'Profile' 
+* (in)Scribe account-holders can create a new entry, when they have been redirected to the 'Profile' 
 page on successful sign-in.
 * When clicking the "New Entry" button on the Profile page, users are redirected to a form, where all fields must be completed,
   before an entry is recorded within the database. These fields include:
-  * <em>Mood</em> - This is a dropdown list, which stored as documents in a database within the same collection, which contains various emotions on a spectrum.
+  * <em>Mood</em> - This is a dropdown list, which is stored as documents in a database within the same collection, which contains various emotions on a spectrum.
     This choice will act as the title for the card visible on an Entry card on the Entries page.
   * <em>Event</em> - This field, acts as the body content when clicking on an Entry card, from the Entries page
   * <em>Strength of Emotion</em> - This field, a dropdown list similar to that of the Mood field. It contains documents, ranging from 1-10, a scale in which the user
     can allocate the strength of emotion they could relate their even to.
-  * <em>Solution</em> - This field has been created to encourage the user, what they'd like to happen in order to overcome or deal with the event. 
-  * <em>Self-Help</em> - This field has been created to enable the user to document any self-help technique, whether it be writing/deep-breathing/meditation, or a hobby
+  * <em>Solution</em> - This field has been created to encourage the user, what they'd like to happen to overcome or deal with the event. 
+  * <em>Self-Help</em> - This field has been created to enable the user to document any self-help technique, whether it be writing/deep-breathing/meditation or a hobby
     to keep them from becoming anxious or prevent overthinking.
-  * <em>Activity Duration</em> - This field relates to the the Self-Help field, where the user can describe how long they took to complete their activity.
+  * <em>Activity Duration</em> - This field relates to the Self-Help field, where the user can describe how long they took to complete their activity.
   * <em>Completed Solution</em> - The Completed Solution field marks whether or not a user has made the effort to work towards the solution, and shouldn't be confused
     with the Self-Help Activity.
   * <em>Date</em> - The datepicker tool from Materialize, initializes a calendar for the user to choose the date in which the entry was created. It can of course be
@@ -169,23 +169,23 @@ From this page, the signed-in user, can choose to edit or delete the entry.
 
 ##### Entry Update
 Similar to the Entry Reading aspect, <em>only</em> registered users can access their entries for update/editing. This can be carried out from the entries page when clicking
-on an entry card, and as previously mentioned, by clicking the yellow "More Info" button. This update/edit button is shown with a green button, which on screen sizes lower
+on an entry card, and as previously mentioned, by clicking the yellow "More Info" button. This update/edit button is shown with a green button, which on-screen sizes lower
 than desktop will display as a 'Pen' icon used from Materialize.
 
 ##### Entry Deletion
-Entry deletion within the (in)Scribe site is simple, and can be completed by pressing the red "Delete" button on each entry when signed in as a user. The button on devices
+Entry deletion within the (in)Scribe site is simple and can be completed by pressing the red "Delete" button on each entry when signed in as a user. The button on devices
 with a screen size lower than a desktop or laptop, will display a 'Trash' icon, used from Materialize.
 
 #### Search Entries
 
-Signed in users have the option to search past entries using a search box on the profile page, where the option to create a new entry is. However the Search feature uses 
-keywords from every entry created by a user. This however, does not affect the Community page.
+Signed-in users have the option to search past entries using a search box on the profile page, where the option to create a new entry is. However, the Search feature uses 
+keywords from every entry created by a user. This, however does not affect the Community page.
 
 ### Future Implementations
-I think the best practice for this type of platform would be to evaluate how users utilise the platform, which would be and ongoing process.
+I think the best practice for this type of platform would be to evaluate how users utilise the platform, which would be an ongoing process.
 
-With mental health awareness on the taking main-stage in society, adding the option to enable the user to share posts which have been made public to social media to help others, would be a step 
-in this direction. 
+With mental health awareness being recognised more in society, adding the option to enable the user to share posts that have been made public to social media to help others, 
+would be a step in this direction. 
 
 As a UX element, it would be in the best interest to add an interactive element to each entry card on the entries.html, which on recognition of a particular emotion or 
 feeling, be able to represent that in the form of an image, which, without attributing the "entry.mood", a graphic would instead take its place.
@@ -211,3 +211,33 @@ feeling, be able to represent that in the form of an image, which, without attri
 * Coolors
 * ScrollReveal
 * PEP8
+
+## Testing
+
+The following document, [TEST.md](https://github.com/LHBank/inscribe/blob/master/TEST.md) has been created to record the manual testing carried out throughout the project.
+
+## Deployment
+### Local Deployment
+
+### Heroku Deployment
+
+
+## Media
+* [Flaticon](https://tinyurl.com/wvrdcy2p) - Quill Image used in the navbar and title.
+* [Videvo](https://www.videvo.net/video/sunset-reflecting-off-sea-at-dusk/7584/) - Video background used throughout the site.
+
+## Acknowledgements
+
+* My thanks to the Student Care team at Code Institute for their support and understanding during a particularly difficult time, 
+whilst I, like many other students, were also taking on the challenge of learning new technologies taught through their Full Stack 
+Web Development Course.
+
+* My thanks to Felipe Alarcon, my mentor through Code Institute, who has been encouraging and available to talk to whenever I've 
+found myself in difficulty with understanding certain elements & challenges, and how I should approach them. His commitment to students
+(from my own experience) has been consistent from the commencement of the course, and I am grateful for this.
+
+* The course provided by [Udemy](https://www.udemy.com/share/103RyiBUAZcFhXQng=/) has helped me approach certain elements
+of Python in a Web development environment, which I had previously been experiencing difficulty with.
+
+* This project-concept, "(in)Scribed", has been created by W. Marjoribanks, and shares similar syntax to that of a Walkthrough Project 
+currently in place by Code Institute, Dublin.
