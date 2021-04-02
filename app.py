@@ -162,7 +162,8 @@ def more_info(entry_id):
         abort(403)
 
     entry = mongo.db.entries.find_one({"_id": ObjectId(entry_id)})
-    return render_template("more_info.html", entry=entry)
+    strengths = mongo.db.strengths.find()
+    return render_template("more_info.html", entry=entry, strengths=strengths)
 
 
 # Edit Entry Route

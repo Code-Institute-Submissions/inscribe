@@ -12,7 +12,11 @@
 
                 <h5 class="hide-on-small-only">How Strongly Did it Make You Feel? (Scale 1-10)</h5>
                 <h5 class="hide-on-med-and-up">Strength of Emotion (Scale 1-10)</h5>
-                <h6><em>{{- entry.strengh_num -}}</em></h6>
+                {% for strength in strengths %}
+                {% if strength.strength_num == entry.strength_num %}                
+                <h6><em>{{ strength.strength_num }}</em></h6>
+                {% endif %}
+                {% endfor %}
 
                 <h5>How Could You Remedy This?</h5>
                 <h6><em>{{- entry.solution -}}</em></h6>
