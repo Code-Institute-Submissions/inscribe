@@ -6,7 +6,7 @@
 <br>
 
 (in)Scribe is an online platform that enables users to track and log their accounts of daily life, in essence, a journal that allows the tracking of feelings
-and emotions which they may experience regularly, and would like to understand how they're triggered. All of their entries are securely stored and can be searched, edited 
+and emotions which they may experience regularly, and would like to understand how they're triggered. All of their entries are password protected and can be searched, edited 
 and deleted with ease.
 
 This project, as part of my Third Milestone inline with Code Institute, Dublin, has been deployed to [Github Pages](https://) and [Heroku](https://inscribe-wm.herokuapp.com/).
@@ -63,6 +63,12 @@ platforms available, (in)Scribe was designed with a simple easily-navigable inte
   own advice on dealing with negative or positive emotions.
 
 ### Wireframes
+
+The wireframes created at the beginning of the project and used as a reference throughout are situated in a dedicated folder entitled 
+['wireframes'](https://github.com/LHBank/inscribe/tree/master/wireframes), at the same level as app.py and html templates. It contains 
+screenshot images, for both the Mobile, Tablet, and Desktop viewport screen sizes, due to the use of Materialize, and the prioritisation 
+on Mobile-first devices.
+
 
 
 
