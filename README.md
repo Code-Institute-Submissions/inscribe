@@ -17,6 +17,7 @@ This project, as part of my Third Milestone inline with Code Institute, Dublin, 
   * [Concept](#concept)
   * [User Stories](#user-stories)
   * [Wireframes](#wireframes)
+  * [File Structure](#file-structure)
   * [Design](#design)
     * [Colour Scheme](#colour-scheme)
     * [Typography](#typography)
@@ -64,12 +65,22 @@ platforms available, (in)Scribe was designed with a simple easily-navigable inte
 
 ### Wireframes
 
-The wireframes created at the beginning of the project and used as a reference throughout are situated in a dedicated folder entitled 
+The wireframes created with [Balsamiq]('https://balsamiq.com') at the beginning of the project and used as a reference throughout are situated in a dedicated folder entitled 
 ['wireframes'](https://github.com/LHBank/inscribe/tree/master/wireframes), at the same level as app.py and html templates. It contains 
 screenshot images, for both the Mobile, Tablet, and Desktop viewport screen sizes, due to the use of Materialize, and the prioritisation 
 on Mobile-first devices.
 
+### File Structure
 
+<div>
+    <img src="static/assets/img/readme/file_struc.png" alt="Database Structure">
+</div>
+
+
+### MongoDB
+Before creating a 'collection' in MongoDB, an account must of course be opened, and 'new cluster' started. Within the collection, is where the various tables shown above will be stored
+and updated to. Where the cluster details are shown, the option to 'Connect' is where you can retrieve your 'MONGO_URI'. In my case, I 'connected my application', and copied the 
+MONGO_URI string.
 
 
 ### Design
@@ -122,6 +133,7 @@ felt instilled a sense of calm, and was used as an animated background, played o
 * Responsive Navbar.
 * Date-picker calendar from Materialize on Entry creation.
 * Tooltips to guide the user on how to search for their past entries.
+* Redirecting if unregistered/signed out user attempts to amend user entries.
 
 #### Account Registration
 
@@ -196,6 +208,7 @@ would be a step in this direction.
 As a UX element, it would be in the best interest to add an interactive element to each entry card on the entries.html, which on recognition of a particular emotion or 
 feeling, be able to represent that in the form of an image, which, without attributing the "entry.mood", a graphic would instead take its place.
 
+A password recovery system would be advisable to implement to the platform, to enable users a recovery option if locked out of their account.
 
 ## Technologies
 ### Languages and Frameworks
@@ -206,27 +219,68 @@ feeling, be able to represent that in the form of an image, which, without attri
 * Flask
 
 ### Libraries and Programs
+* [Github](https://github.com)
+* [Gitpod](https://gitpod.io/)
+* [Heroku](https://tinyurl.com/4dfm8ypp)
+* [MongoDB](https://tinyurl.com/ys52wnhj)
+* [Materialize](https://materializecss.com/)
+* [Font Awesome](https://fontawesome.com/)
+* [Google Fonts](https://fonts.google.com/)
+* [Coolors](https://coolors.co/)
+* [ScrollReveal](https://github.com/jlmakes/scrollreveal/wiki/Getting-Started-(v3.x))
+* [Balsamiq](https://balsamiq.com) - Wireframes
+* [app.diagrams](https://app.diagrams.net) - File structure diagram creation.
 
-* Github
-* Gitpod
-* Heroku
-* MongoDB
-* Materialize.css
-* FontAwesome
-* Google Fonts
-* Coolors
-* ScrollReveal
-* PEP8
+### Code Validation
+* [PEP8](http://pep8online.com/) - Python
+* [W3C](https://validator.w3.org/) - HTML
+* [Jigsaw](http://jigsaw.w3.org/css-validator/) - CSS
+* [JSHint](https://jshint.com) - JavaScript
 
 ## Testing
 
 The following document, [TEST.md](https://github.com/LHBank/inscribe/blob/master/TEST.md) has been created to record the manual testing carried out throughout the project.
 
 ## Deployment
+
 ### Local Deployment
+
+### Github
+The steps I took to deploy this site to GitHub pages were as follows:
+
+  * I first selected the chosen repository, in this case, "inscribe".
+  * I then selected the 'Settings' tab, seen above the contents list of the repository.
+  * Scrolling down to the GitHub Pages subheading near the bottom of the page.
+  * When clicking on the dropdown menu box, and changing the option from "none" to "Master Branch".
+  * Once this page has automatically refreshed on changing this option, scroll down to the same Github 
+  Pages subheading, which now has a green highlighted box, confirming that the site has been published.
 
 ### Heroku Deployment
 
+To deploy (in)Scribe through Heroku, the following steps were taken:
+  * Within a new repository, create two new files: ```app.py``` and ```env.py```. The .gitignore file should already exist when using the CI full template,
+    if not, create it, and type in ```env.py``` into the first line, this ensures no sensitive data will be uploaded to Github.
+  * Install Flask within the repository, by typing ``` pip3 install Flask ```.
+  * Within the ```env.py``` file, the deployment variables to be inputted to Heroku, will need to be typed in here.
+
+    <div>
+        <img src="static/assets/img/readme/variable.png" alt="Heroku Variables">
+    </div>
+  * The MONGO_URI needs to be obtained from the database collection where the application data is stored.
+
+  * Sign into your/create an account with Heroku, and click the button titled 'New' with two arrows, and choose 'Create a New App'.
+  * Return to your Github repository and open a new terminal if one hasn't been already. If they don't already exist, create two new files using the terminal;
+    Procfile and requirements.txt. 
+    * ``` pip3 freeze --local > requirements.txt ``` and ```echo web: python app.py > Procfile```
+      * Procfile needs to have one line of syntax: <br>
+      ``` web: python app.py ```
+    * Heroku uses the requirements.txt file to know what is required to run the application. Make sure this file is kept relevant and recent
+      by typing the following syntax into the terminal used previously: <br>
+      ``` pip3 freeze --local > requirements.txt ```
+    * Choose your region.
+    * Continue to 'Reveal Config Vars' in the settings tab back in Heroku.
+    * The syntax from the ```env.py``` file will need to be typed in, line-by-line.
+    * Now enable automatic deployment on the application overview, and push to the master branch. It will take some time to initialise.
 
 ## Media
 * [Flaticon](https://tinyurl.com/wvrdcy2p) - Quill Image used in the navbar and title.
