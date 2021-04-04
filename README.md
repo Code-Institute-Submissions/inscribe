@@ -13,6 +13,8 @@ This project, as part of my Third Milestone inline with Code Institute, Dublin, 
 
 ---
 
+## README Document Navigation
+
 * [UX](#ux)
   * [Concept](#concept)
   * [User Stories](#user-stories)
@@ -25,6 +27,7 @@ This project, as part of my Third Milestone inline with Code Institute, Dublin, 
 * [Features](#features)
   * [Existing Features](#existing-features)
     * [Account Registration](#registration)
+    * [Home Page](#home-page)
     * [About Page](#about)
     * [Community Page](#community-page)
     * [Search Entries](#search-entries)
@@ -144,6 +147,12 @@ felt instilled a sense of calm, and was used as an animated background, played o
 * There is a set character max-length of 12, which includes the use of special characters and numbers for the user's identity.
 * There is a set character min-length of 5 for an entered password, which can also include special characters and numbers, and
   will be validated using the confirm password input.
+
+#### Home Page
+
+The 'Home' page can be accessed when visiting the site for the first time, and gives an indication as to the site's purpose from animated hero-text,
+which uses [ScrollReveal](https://github.com/jlmakes/scrollreveal/wiki/Getting-Started-(v3.x)). However, this gives the option to the user to navigate
+using in page links, to their desired page.
 
 #### About Page
 
