@@ -18,9 +18,10 @@ that it be available across multiple screen sizes, i.e. Mobile, Tablet and Deskt
 
 Using various browser Developer Tools; Chrome, Safari and Opera and testing different viewport windows, such as:
   * Google Pixel
-  * iPhone Models 5-11
+  * Samsung Galaxy Z
+  * iPhone Models 5, 6, and 11
   * iPad Pro
-  * 
+  
  
 No errors presented themselves at time of testing using the above browsers.
 
