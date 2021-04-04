@@ -43,23 +43,14 @@
 <!--Submit Button-->
             <div class="row">
                 <div class="col s12 center-align">
-                    <!-- Desktop Buttons -->
                     <a href="{{ url_for('community_home') }}"
-                        class="btn waves-effect waves-orange custSubBtn padOutWidth hide-on-small-only left">Back</a>
+                        class="btn waves-effect waves-orange custSubBtn padOutWidth tooltipped left" data-tooltip="Go Back">
+                            <i class="material-icons">arrow_back</i></a>
                     <a href="{{ url_for('delete_sugg', suggestion_id=suggestion._id) }}"
-                        class="btn waves-effect waves-orange entryDltBtn padOutWidth hide-on-small-only right">Delete</a>
-                    <button type="submit" class="btn waves-effect waves-orange entryEdBtn padOutWidth hide-on-small-only right">
-                        Update
-                    </button>
-                    <!-- Mobile Buttons -->
-                    <a href="{{ url_for('community_home') }}"
-                        class="btn waves-effect waves-orange custSubBtn hide-on-med-and-up left"><i
-                            class="material-icons">arrow_back</i></a>
-                    <a href="{{ url_for('delete_sugg', suggestion_id=suggestion._id) }}"
-                        class="btn waves-effect waves-orange entryDltBtn hide-on-med-and-up right"><i
-                            class="material-icons">delete</i></a>
-                    <button type="submit" class="btn waves-effect waves-orange entryEdBtn hide-on-med-and-up right">
-                        <i class="material-icons">check</i>
+                        class="btn waves-effect waves-orange entryDltBtn padOutWidth tooltipped right" data-tooltip="Delete Suggestion">
+                            <i class="material-icons">delete</i></a>
+                    <button type="submit" class="btn waves-effect waves-orange entryEdBtn padOutWidth tooltipped right" 
+                        data-tooltip="Update Suggestion"><i class="material-icons">check</i>
                     </button>
                 </div>
             </div>
