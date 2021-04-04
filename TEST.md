@@ -30,9 +30,24 @@ elements that I had experienced difficulty with, however am happy with the end r
 
 ---
 ## Pages and Features
+
 ### Home Page
+When entering the site for the first time, there is little information, other than the animated hero text, regarding the sites purpose.
+This encourages the user to navigate to the relevant links, 'About' or 'Registration'. On recognition by the browser, that there is still
+a current ```session user```, the 'Home' page will display a different set of navigation links whilst on a desktop viewport.
+
 ### Registration
+In order for a new user to register a new account with (in)Scribe, there are several input fields which need to be matched:
+* A username, taking the ```html pattern attribute``` into consideration, has to contain a minimum of eight characters, however less than
+twelve, including one uppercase letter and a number.
+* The password input field must also match the same ```pattern```.
+
+<div>
+    <img src="static/assets/img/test/home_reg.gif" alt="gif">
+</div>
+
 ### Sign In
+
 ### Sign Out
 ### Profile
 ### New Entry

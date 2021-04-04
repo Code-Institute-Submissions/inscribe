@@ -34,7 +34,7 @@
                             <br>
                             <div class="collapseButton">                          
                         <!-- Desktop Buttons -->
-                                {% if session.user == "admin" or session.user|lower == suggestion.created_by|lower %}
+                                {% if session.user == "Admin111" or session.user|lower == suggestion.created_by|lower %}
                                 <a href="{{ url_for('delete_sugg', suggestion_id=suggestion._id) }}"
                                     class="btn btn-small waves-effect waves-orange entryDltBtn center hide-on-small-only right">Delete</a>
                                 <a href="{{ url_for('edit_sugg', suggestion_id=suggestion._id) }}"
