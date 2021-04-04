@@ -7,24 +7,24 @@
 <!-- Username Field -->
                 <div class="row">
                     <div class="input-field col s8 push-s2 push-m2 push-l2 padOutHeight">
-                        <input id="username" name="username" type="text" pattern="^[a-zA-Z0-9]{5,12}$" 
-                            maxlength="12" class="validate" required>
+                        <input id="username" name="username" type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                            class="validate" required>
                         <label for="username" class="yellow-text lighten-2">Your Username</label>
                     </div>                    
                 </div>
 <!-- Password Field -->
                 <div class="row">
                     <div class="input-field col s8 push-s2 push-m2 push-l2 padOutHeight">
-                        <input id="password" name="password" type="password" pattern="^[a-zA-Z0-9]{5,12}$" 
-                            minlength="5" maxlength="12" class="validate" required>
+                        <input id="password" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                            class="validate" required>
                         <label for="password" class="yellow-text lighten-2">Your Password</label>
                     </div>
                 </div>
 <!-- Password Check Field -->
                 <div class="row">
                     <div class="input-field col s8 push-s2 push-m2 push-l2">
-                        <input id="confirm-password" name="confirm-password" type="password" pattern="^[a-zA-Z0-9]{5,12}$" 
-                            minlength="5" maxlength="12" class="validate" required>
+                        <input id="confirm-password" name="confirm-password" type="password" 
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
                         <label for="confirm-password" class="yellow-text lighten-2">Confirm Your Password</label>
                     </div>
                 </div>
