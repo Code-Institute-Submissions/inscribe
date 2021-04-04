@@ -11,17 +11,52 @@ Throughout the project, I chose to manually test my work so I had a firm underst
 were going to be accessed by other users, across various device-types. This was challenging in itself, whilst trying to come to grips with certain
 elements that I had experienced difficulty with, however am happy with the end result.
 
-# Responsive Design
+---
+## TEST Document Navigation
+* [Pages and Features](#pages-and-features)
+  * [Home Page](#home-page)
+  * [Registration](#registration)
+  * [Sign In](#sign-in)
+  * [Sign Out](#sign-out)
+  * [Profile](#profile)
+  * [New Entry](#new_entry)
+  * [Edit Entry](#edit-entry)
+  * [More Info](#more-info)
+  * [Community](#community)
+  * [New Suggestion](#new-suggestion)
+  * [Edit Suggestion](#edit-suggestion)
+* [Responsive Design](#responsive-design)
+
+
+---
+## Pages and Features
+### Home Page
+### Registration
+### Sign In
+### Sign Out
+### Profile
+### New Entry
+### Edit Entry
+### More Info
+### Community
+### New Suggestion
+### Edit Suggestion
+
+---
+
+## Responsive Design
 
 As this platform was built upon the concept that a user be able to access their account, providing they had an internet connection, it was vital
 that it be available across multiple screen sizes, i.e. Mobile, Tablet and Desktop. 
 
 Using various browser Developer Tools; Chrome, Safari and Opera and testing different viewport windows, such as:
   * Google Pixel
+  * Huawei Mate 20X
   * Samsung Galaxy Z
   * iPhone Models 5, 6, and 11
   * iPad Pro
-  
+  * MacBook Pro
+
  
 No errors presented themselves at time of testing using the above browsers.
 
