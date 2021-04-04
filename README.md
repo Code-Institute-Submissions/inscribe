@@ -37,6 +37,7 @@ This project, as part of my Third Milestone inline with Code Institute, Dublin, 
 * [Technologies Used](#technologies)
   * [Languages and Frameworks](#languages-and-frameworks)
   * [Libraries and Programs](#libraries-and-programs)
+  * [Code Validation](#code-validation)
 * [Testing](#testing)
 * [Deployment](#deployment)
     * [Local Deployment](#local-deployment)
@@ -233,8 +234,17 @@ A password recovery system would be advisable to implement to the platform, to e
 
 ### Code Validation
 * [PEP8](http://pep8online.com/) - Python
-* [W3C](https://validator.w3.org/) - HTML
+    <div>
+        <img src="static/assets/img/readme/PEP8.png" alt="python checker">
+    </div>
+* [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Finscribe-wm.herokuapp.com%2F) - HTML
+    <div>
+        <img src="static/assets/img/readme/w3c_html.png" alt="html checker">
+    </div>
 * [Jigsaw](http://jigsaw.w3.org/css-validator/) - CSS
+    <div>
+        <img src="static/assets/img/readme/w3c_CSS.png" alt="css checker">
+    </div>
 * [JSHint](https://jshint.com) - JavaScript
 
 ## Testing
@@ -277,7 +287,8 @@ To deploy (in)Scribe through Heroku, the following steps were taken:
     * Heroku uses the requirements.txt file to know what is required to run the application. Make sure this file is kept relevant and recent
       by typing the following syntax into the terminal used previously: <br>
       ``` pip3 freeze --local > requirements.txt ```
-    * Choose your region.
+    * Back within the Heroku browser window, choose your region.
+    * Find your Github account details, and identify the relevant repository.
     * Continue to 'Reveal Config Vars' in the settings tab back in Heroku.
     * The syntax from the ```env.py``` file will need to be typed in, line-by-line.
     * Now enable automatic deployment on the application overview, and push to the master branch. It will take some time to initialise.
