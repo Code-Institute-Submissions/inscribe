@@ -231,6 +231,7 @@ A password recovery system would be advisable to implement to the platform, to e
 * [ScrollReveal](https://github.com/jlmakes/scrollreveal/wiki/Getting-Started-(v3.x))
 * [Balsamiq](https://balsamiq.com) - Wireframes
 * [app.diagrams](https://app.diagrams.net) - File structure diagram creation.
+* [w3Schools.com](https://www.w3schools.com) - Reference purposes.
 
 ### Code Validation
 * [PEP8](http://pep8online.com/) - Python
