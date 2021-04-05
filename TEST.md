@@ -16,15 +16,14 @@ elements that I had experienced difficulty with, however am happy with the end r
 * [Pages and Features](#pages-and-features)
   * [Home Page](#home-page)
   * [Registration](#registration)
-  * [Sign In](#sign-in)
-  * [Sign Out](#sign-out)
+  * [Sign In and Sign Out](#sign-in-and-sign-out)
   * [Profile](#profile)
   * [New Entry](#new_entry)
   * [Edit Entry](#edit-entry)
   * [More Info](#more-info)
-  * [Community](#community)
-  * [New Suggestion](#new-suggestion)
-  * [Edit Suggestion](#edit-suggestion)
+  * [Community Suggestion](#community-suggestion)
+  * [Other Community Suggestion](#other-community-suggestion)
+  * [Admin Rights](#admin-rights)
 * [Responsive Design](#responsive-design)
 
 
@@ -47,9 +46,7 @@ In order for a new user to register a new account with (in)Scribe, there are thr
     <img src="static/assets/img/test/acc_creation.gif" alt="Account Creation gif">
 </div>
 
-### Sign In
-
-### Sign Out
+### Sign In and Sign Out
 
 
 ### Profile
@@ -57,30 +54,47 @@ In order for a new user to register a new account with (in)Scribe, there are thr
 <div>
     <img src="static/assets/img/test/entry_creation.gif" alt="Entry Creation gif">
 </div>
+
 ### Edit Entry
 <div>
     <img src="static/assets/img/test/entry_edit.gif" alt="Edit Entry gif">
 </div>
+
 ### More Info
 <div>
     <img src="static/assets/img/test/entry_more_info.gif" alt="More Info gif">
 </div>
+
 ### Delete Entry
 <div>
-    <img src="static/assets/img/test/entry_delete.gif" alt="Account Creation gif">
+    <img src="static/assets/img/test/entry_delete.gif" alt="Entry Delete gif">
 </div>
+
 ### Search
+<div>
+    <img src="static/assets/img/test/entry_search.gif" alt="Entry Search gif">
+</div>
 
+### Community Suggestion
+<div>
+    <img src="static/assets/img/test/sugg_create.gif" alt="Suggestion Creation gif">
+</div>
 
-### Community
+### Other Community Suggestion
+<div>
+    <img src="static/assets/img/test/other_sugg_create.gif" alt="Other Suggestion gif">
+</div>
 
-### New Suggestion
-### Edit Suggestion
+### Admin Rights
+<div>
+    <img src="static/assets/img/test/admin_rights.gif" alt="Admin Rights gif">
+</div>
 
 ### Error Handling
 <div>
-    <img src="static/assets/img/test/abort_error.gif" alt="Account Creation gif">
+    <img src="static/assets/img/test/abort_error.gif" alt="Abort Error gif">
 </div>
+
 ---
 
 ## Responsive Design
