@@ -31,10 +31,12 @@
                             </div>
                         <br>
                         <div class="col s12 padOutHeight center">
-                            <a href="{{ url_for('more_info', entry_id=entry._id) }}" class="btn waves-effect waves-orange entryMBtn padOutWidth">More</a>
-                            <a href="{{ url_for('edit_entry', entry_id=entry._id) }}" class="btn waves-effect waves-orange entryEdBtn padOutWidth">Edit</a>
-                            <a href="{{ url_for('delete_entry', entry_id=entry._id) }}" class="btn waves-effect waves-orange entryDltBtn padOutWidth">Delete</a>
-                        </div>
+                            <a href="{{ url_for('more_info', entry_id=entry._id) }}" class="btn waves-effect waves-orange entryMBtn padOutWidth tooltipped" data-tooltip="More Info">
+                                <i class="material-icons">launch</i></a>
+                            <a href="{{ url_for('delete_entry', entry_id=entry._id) }}" class="btn waves-effect waves-orange entryDltBtn padOutWidth tooltipped right" data-tooltip="Delete Entry">
+                                <i class="material-icons">delete</i></a>
+                            <a href="{{ url_for('edit_entry', entry_id=entry._id) }}" class="btn waves-effect waves-orange entryEdBtn padOutWidth tooltipped right" data-tooltip="Edit Entry">
+                                <i class="material-icons">create</i></a> 
                     </div>
                 </div>
             </div>

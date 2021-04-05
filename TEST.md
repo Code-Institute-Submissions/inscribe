@@ -44,20 +44,43 @@ In order for a new user to register a new account with (in)Scribe, there are thr
 * The 'Confirm Your Password' field must match when compared with the previous password input field.
 
 <div>
-    <img src="static/assets/img/test/" alt="gif">
+    <img src="static/assets/img/test/acc_creation.gif" alt="Account Creation gif">
 </div>
 
 ### Sign In
 
 ### Sign Out
+
+
 ### Profile
 ### New Entry
+<div>
+    <img src="static/assets/img/test/entry_creation.gif" alt="Entry Creation gif">
+</div>
 ### Edit Entry
+<div>
+    <img src="static/assets/img/test/entry_edit.gif" alt="Edit Entry gif">
+</div>
 ### More Info
+<div>
+    <img src="static/assets/img/test/entry_more_info.gif" alt="More Info gif">
+</div>
+### Delete Entry
+<div>
+    <img src="static/assets/img/test/entry_delete.gif" alt="Account Creation gif">
+</div>
+### Search
+
+
 ### Community
+
 ### New Suggestion
 ### Edit Suggestion
 
+### Error Handling
+<div>
+    <img src="static/assets/img/test/abort_error.gif" alt="Account Creation gif">
+</div>
 ---
 
 ## Responsive Design
