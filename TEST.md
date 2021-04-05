@@ -37,13 +37,14 @@ This encourages the user to navigate to the relevant links, 'About' or 'Registra
 a current ```session user```, the 'Home' page will display a different set of navigation links whilst on a desktop viewport.
 
 ### Registration
-In order for a new user to register a new account with (in)Scribe, there are several input fields which need to be matched:
-* A username, taking the ```html pattern attribute``` into consideration, has to contain a minimum of eight characters, however less than
-twelve, including one uppercase letter and a number.
-* The password input field must also match the same ```pattern```.
+In order for a new user to register a new account with (in)Scribe, there are three input fields which are required to be completed:
+* A 'Username', taking the ```html pattern attribute``` into consideration, has to contain a minimum of five characters, however less than
+  twelve, and can also contain a number.
+* The 'Your Password' input field shares the ```pattern```.
+* The 'Confirm Your Password' field must match when compared with the previous password input field.
 
 <div>
-    <img src="static/assets/img/test/home_reg.gif" alt="gif">
+    <img src="static/assets/img/test/" alt="gif">
 </div>
 
 ### Sign In
