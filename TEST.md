@@ -69,7 +69,7 @@ would expectedly turn out.
   * An entry must have an event description of minimum 5 characters, and maximum of 200. On reaching 200 characters, the input field will render the user 
     unable to enter anything else.
   * An entry with a description over 200 characters cannot be added.
-  * When a review was added, it was ensured that all corresponding fields were appropriately filled in the generated entry page.
+  * When an entry was added, it was ensured that all corresponding fields were appropriately filled in the generated entry page.
   * Solution/Self-help/Activity duration all have a maximum input of 50 characters.
     <div>
         <img src="static/assets/img/test/entry_creation.gif" alt="Entry Creation gif">
@@ -98,6 +98,9 @@ and signed in with that specific account, without the errorhandler function bein
     </div>
 
 ### Delete Entry
+The 'delete' function was implemented to allow users to remove both entries and suggestions from being associated with them. I made the decision not to implement a popup which
+confirmed their choice to delete, because the option to edit was made clear in both situations, and users should have the freedom to choose the information they wish to have 
+allocated to their account.
 <div>
     <img src="static/assets/img/test/entry_delete.gif" alt="Entry Delete gif">
 </div>
