@@ -45,8 +45,8 @@ This project, as part of my Third Milestone inline with Code Institute, Dublin, 
 * [Deployment](#deployment)
     * [Local Deployment](#local-deployment)
     * [Deployment to Heroku](#heroku-deployment)
-* [Acknowledgements](#acknowledgements)
 * [Media](#media)
+* [Acknowledgements](#acknowledgements)
 
 ---
 
@@ -136,7 +136,7 @@ felt instilled a sense of calm, and was used as an animated background, played o
 #### UX
 * Responsive Navbar.
 * Date-picker calendar from Materialize on Entry creation.
-* Tooltips to guide the user on how to search for their past entries.
+* Tooltips to guide the user on how to search for their past entries <em>and</em> site navigation/submit buttons.. 
 * Redirecting if unregistered/signed out user attempts to amend user entries.
 
 #### Account Registration
