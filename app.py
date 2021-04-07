@@ -109,14 +109,14 @@ def signin():
 def signout():
     try:
         if not session.get("user"):
-            return redirect(url_for("home"))
+            return redirect(url_for("signin"))
         else:
             # Removes User from Session Cookie
             flash("Goodbye! See You Again Soon.")
             session.pop("user")
             return redirect(url_for("signin"))
     except KeyError:
-        return render_template("home.html")
+        return render_template("signin.html")
 
 
 @app.route("/profile/<username>")
