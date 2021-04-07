@@ -141,7 +141,7 @@ felt instilled a sense of calm, and was used as an animated background, played o
 
 #### Account Registration
 
-* Unregistered users can sign up for an (in)Scribed account by navigating to the "registration" page using various links, within the:
+* Unregistered users can sign up for an (in)Scribe account by navigating to the "registration" page using various links, within the:
   * Navbar
   * 'Create an Account' links on "home" and "sign in" pages.
 * There is a set character max-length of 12, which includes the use of special characters and numbers for the user's identity.
@@ -320,5 +320,5 @@ found myself in difficulty with understanding certain elements & challenges, and
 * The course provided by [Udemy](https://www.udemy.com/share/103RyiBUAZcFhXQng=/) has helped me approach certain elements
 of Python in a Web development environment, which I had previously been experiencing difficulty with.
 
-* This project-concept, "(in)Scribed", has been created by W. Marjoribanks, and shares similar syntax to that of a Walkthrough Project 
+* This project-concept, "(in)Scribe", has been created by W. Marjoribanks, and shares similar syntax to that of a Walkthrough Project 
 currently in place by Code Institute, Dublin.
