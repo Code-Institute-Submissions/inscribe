@@ -107,6 +107,7 @@ def signin():
 # Sign Out Route
 @app.route("/signout")
 def signout():
+    # Confirms for a Current Session User.
     try:
         if not session.get("user"):
             return redirect(url_for("signin"))
@@ -121,6 +122,7 @@ def signout():
 
 @app.route("/profile/<username>")
 def profile(username):
+    # Confirms for a Current Session User.
     try:
         if not session.get("user"):
             return redirect(url_for("signin"))
@@ -136,6 +138,7 @@ def profile(username):
 # New Entry Route
 @app.route("/add_entry", methods=["GET", "POST"])
 def add_entry():
+    # Confirms for a Current Session User.
     if not session.get("user"):
         abort(404)
 
@@ -330,4 +333,4 @@ def server_error(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP", "0.0.0.0"),
             port=int(os.environ.get("PORT", "5000")),
-            debug=True)
+            debug=False)

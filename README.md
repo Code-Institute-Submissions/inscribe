@@ -9,7 +9,7 @@
 and emotions which they may experience regularly, and would like to understand how they're triggered. All of their entries are password protected and can be searched, edited 
 and deleted with ease.
 
-This project, as part of my Third Milestone inline with Code Institute, Dublin, has been deployed to [Github Pages](https://) and [Heroku](https://inscribe-wm.herokuapp.com/).
+This project, as part of my Third Milestone inline with Code Institute, Dublin, has been deployed to [Github Pages](https://lhbank.github.io/inscribe/) and [Heroku](https://inscribe-wm.herokuapp.com/).
 
 ---
 
@@ -20,6 +20,7 @@ This project, as part of my Third Milestone inline with Code Institute, Dublin, 
   * [User Stories](#user-stories)
   * [Wireframes](#wireframes)
   * [File Structure](#file-structure)
+  * [MongoDB](#mongodb)
   * [Design](#design)
     * [Colour Scheme](#colour-scheme)
     * [Typography](#typography)
@@ -93,7 +94,7 @@ A custom CSS file placed within the static, assets folder of (in)Scribe, was use
 Materialize.css was chosen (despite its frequency of updates) for <em>its</em> simplicity in approach to essential components 
 which I included within the project.
 
-#### Colour Scheme
+### Colour Scheme
 
 As with all online platforms, a consistent colour scheme is fundamental. With this in mind, and taking into consideration the
 vibrancy and animation of the video background played on loop, the text content colour needed to be contrasting but in-keeping 
@@ -114,13 +115,13 @@ used behind.
     <img src="static/assets/img/readme/palette.png" alt="Colour Palette">
 </div>
 
-#### Typography
+### Typography
 
 Text content throughout the site was kept to a minimum of two font-families. Heading and larger text utilised the "Raleway" font-family found within the 
 Google Fonts Library. Text-input and smaller text-content used a font with a similar style to "Raleway", "Quicksand" was used, also found within the 
 Google Fonts Library.
 
-#### Imagery
+### Imagery
 
 With a very simple project concept, imagery has been kept to an <em>absolute</em> minimum for that reason alone. The 'Scribe' element
 of (in)Scribe, was decorated with a quill to simulate the user's motion of writing something personal or of value to them. This image 
@@ -152,7 +153,7 @@ felt instilled a sense of calm, and was used as an animated background, played o
 
 The 'Home' page can be accessed when visiting the site for the first time, and gives an indication as to the site's purpose from animated hero-text,
 which uses [ScrollReveal](https://github.com/jlmakes/scrollreveal/wiki/Getting-Started-(v3.x)). However, this gives the option to the user to navigate
-using in page links, to their desired page.
+using in-page links, to their desired page.
 
 #### About Page
 
@@ -163,7 +164,7 @@ suggests how the platform should be used, and if a user isn't registered, gives 
 
 The 'Community' page was implemented as an option for registered users to share techniques that have proven helpful when dealing
 with negative or positives emotions and events. As this particular page allows users to post publically, a disclaimer header on both 
-the 'suggestion listing' page <em>and</em> 'add suggestion' page is made clear so that users understand anything they share, won't be
+the 'Community' page <em>and</em> 'Add Suggestion' page is made clear so that users understand anything they share, won't be
 private.
 
 #### Entries
